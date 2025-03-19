@@ -52,9 +52,6 @@ class AudiohookConfig:
         if self.ui_connector_endpoint is None:
             raise ValueError(
                 "Environment Variable UI_CONNECTOR for Audiohook monitor is missing")
-        if self.ui_connector_endpoint is None:
-            raise ValueError(
-                "Environment Variable UI_CONNECTOR for Audiohook monitor is missing")
         if self.redis_host is None:
             raise ValueError(
                 "Environment Variable REDISHOST for Audiohook monitor is missing")
@@ -71,5 +68,6 @@ config = AudiohookConfig(
     ui_connector_endpoint=os.environ.get(
         "UI_CONNECTOR"),
     redis_host=os.environ.get('REDISHOST'),
-    redis_port=int(os.environ.get('REDISPORT'))
+    redis_port=int(os.environ.get('REDISPORT')),
+    log_level=os.environ.get("LOG_LEVEL")
 )
